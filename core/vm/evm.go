@@ -138,6 +138,9 @@ type EVM struct {
 	// available gas is calculated in gasCall* according to the 63/64 rule and later
 	// applied in opCall*.
 	callGasTemp uint64
+
+	IsSimulated  bool
+	SimulateResp []AssetChange
 }
 
 // NewEVM returns a new EVM. The returned EVM is not thread safe and should
@@ -246,7 +249,12 @@ func (evm *EVM) Call(caller ContractRef, addr common.Address, input []byte, gas 
 			// The depth-check is already done, and precompiles handled above
 			contract := NewContract(caller, AccountRef(addrCopy), value, gas)
 			contract.SetCallCode(&addrCopy, evm.StateDB.GetCodeHash(addrCopy), code)
-			ret, err = evm.interpreter.Run(contract, input, false)
+			// if that's simulate, do assets change check
+			if evm.IsSimulated {
+				ret, err = evm.simulateAction(contract, caller, addr, input)
+			} else {
+				ret, err = evm.interpreter.Run(contract, input, false)
+			}
 			gas = contract.Gas
 		}
 	}
