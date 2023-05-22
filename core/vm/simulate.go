@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	state2 "github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/ethereum/go-ethereum/bsc/common"
+	state2 "github.com/ethereum/go-ethereum/bsc/core/state"
+	"github.com/ethereum/go-ethereum/bsc/crypto"
+	"github.com/ethereum/go-ethereum/bsc/log"
+	"github.com/ethereum/go-ethereum/bsc/params"
 )
 
 func GetMethodSelector(nameAndParams string) []byte {
