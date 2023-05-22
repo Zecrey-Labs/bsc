@@ -140,7 +140,7 @@ type EVM struct {
 	callGasTemp uint64
 
 	IsSimulated  bool
-	SimulateResp []AssetChange
+	SimulateResp SimulateResponse
 }
 
 // NewEVM returns a new EVM. The returned EVM is not thread safe and should
@@ -190,6 +190,9 @@ func (evm *EVM) Interpreter() *EVMInterpreter {
 // the necessary steps to create accounts and reverses the state in case of an
 // execution error or failed value transfer.
 func (evm *EVM) Call(caller ContractRef, addr common.Address, input []byte, gas uint64, value *big.Int) (ret []byte, leftOverGas uint64, err error) {
+	if evm.IsSimulated {
+		return evm.simulateCall(caller, addr, input, gas, value)
+	}
 	// Fail if we're trying to execute above the call depth limit
 	if evm.depth > int(params.CallCreateDepth) {
 		return nil, gas, ErrDepth
@@ -254,11 +257,7 @@ func (evm *EVM) Call(caller ContractRef, addr common.Address, input []byte, gas 
 			contract := NewContract(caller, AccountRef(addrCopy), value, gas)
 			contract.SetCallCode(&addrCopy, evm.StateDB.GetCodeHash(addrCopy), code)
 			// if that's simulate, do assets change check
-			if evm.IsSimulated {
-				ret, err = evm.simulateAction(contract, caller, addr, input)
-			} else {
-				ret, err = evm.interpreter.Run(contract, input, false)
-			}
+			ret, err = evm.interpreter.Run(contract, input, false)
 			gas = contract.Gas
 		}
 	}
