@@ -26,12 +26,12 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/forkid"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ethereum/go-ethereum/bsc/common"
+	"github.com/ethereum/go-ethereum/bsc/core"
+	"github.com/ethereum/go-ethereum/bsc/core/forkid"
+	"github.com/ethereum/go-ethereum/bsc/core/types"
+	"github.com/ethereum/go-ethereum/bsc/params"
+	"github.com/ethereum/go-ethereum/bsc/rlp"
 )
 
 type Chain struct {

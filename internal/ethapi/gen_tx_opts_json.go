@@ -5,7 +5,7 @@ package ethapi
 import (
 	"encoding/json"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/ethereum/go-ethereum/bsc/common/hexutil"
 )
 
 // MarshalJSON marshals as JSON.

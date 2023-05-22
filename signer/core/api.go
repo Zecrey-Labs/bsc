@@ -25,17 +25,17 @@ import (
 	"os"
 	"reflect"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/accounts/scwallet"
-	"github.com/ethereum/go-ethereum/accounts/usbwallet"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/ethereum/go-ethereum/signer/core/apitypes"
-	"github.com/ethereum/go-ethereum/signer/storage"
+	"github.com/ethereum/go-ethereum/bsc/accounts"
+	"github.com/ethereum/go-ethereum/bsc/accounts/keystore"
+	"github.com/ethereum/go-ethereum/bsc/accounts/scwallet"
+	"github.com/ethereum/go-ethereum/bsc/accounts/usbwallet"
+	"github.com/ethereum/go-ethereum/bsc/common"
+	"github.com/ethereum/go-ethereum/bsc/common/hexutil"
+	"github.com/ethereum/go-ethereum/bsc/internal/ethapi"
+	"github.com/ethereum/go-ethereum/bsc/log"
+	"github.com/ethereum/go-ethereum/bsc/rpc"
+	"github.com/ethereum/go-ethereum/bsc/signer/core/apitypes"
+	"github.com/ethereum/go-ethereum/bsc/signer/storage"
 )
 
 const (

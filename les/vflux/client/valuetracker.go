@@ -23,12 +23,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/les/utils"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ethereum/go-ethereum/bsc/common/mclock"
+	"github.com/ethereum/go-ethereum/bsc/ethdb"
+	"github.com/ethereum/go-ethereum/bsc/les/utils"
+	"github.com/ethereum/go-ethereum/bsc/log"
+	"github.com/ethereum/go-ethereum/bsc/p2p/enode"
+	"github.com/ethereum/go-ethereum/bsc/rlp"
 )
 
 const (

@@ -35,17 +35,17 @@ import (
 	"github.com/prysmaticlabs/prysm/v4/validator/keymanager"
 	keystorev4 "github.com/wealdtech/go-eth2-wallet-encryptor-keystorev4"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/eth/downloader"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/ethereum/go-ethereum/bsc/common"
+	"github.com/ethereum/go-ethereum/bsc/consensus"
+	"github.com/ethereum/go-ethereum/bsc/consensus/ethash"
+	"github.com/ethereum/go-ethereum/bsc/core"
+	"github.com/ethereum/go-ethereum/bsc/core/rawdb"
+	"github.com/ethereum/go-ethereum/bsc/core/types"
+	"github.com/ethereum/go-ethereum/bsc/core/vm"
+	"github.com/ethereum/go-ethereum/bsc/crypto"
+	"github.com/ethereum/go-ethereum/bsc/eth/downloader"
+	"github.com/ethereum/go-ethereum/bsc/event"
+	"github.com/ethereum/go-ethereum/bsc/params"
 )
 
 var (

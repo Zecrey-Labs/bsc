@@ -20,10 +20,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/console"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/ethereum/go-ethereum/bsc/cmd/utils"
+	"github.com/ethereum/go-ethereum/bsc/console"
+	"github.com/ethereum/go-ethereum/bsc/node"
+	"github.com/ethereum/go-ethereum/bsc/rpc"
 	"gopkg.in/urfave/cli.v1"
 )
 

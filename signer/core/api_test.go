@@ -27,17 +27,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/signer/core"
-	"github.com/ethereum/go-ethereum/signer/core/apitypes"
-	"github.com/ethereum/go-ethereum/signer/fourbyte"
-	"github.com/ethereum/go-ethereum/signer/storage"
+	"github.com/ethereum/go-ethereum/bsc/accounts"
+	"github.com/ethereum/go-ethereum/bsc/accounts/keystore"
+	"github.com/ethereum/go-ethereum/bsc/common"
+	"github.com/ethereum/go-ethereum/bsc/common/hexutil"
+	"github.com/ethereum/go-ethereum/bsc/core/types"
+	"github.com/ethereum/go-ethereum/bsc/internal/ethapi"
+	"github.com/ethereum/go-ethereum/bsc/rlp"
+	"github.com/ethereum/go-ethereum/bsc/signer/core"
+	"github.com/ethereum/go-ethereum/bsc/signer/core/apitypes"
+	"github.com/ethereum/go-ethereum/bsc/signer/fourbyte"
+	"github.com/ethereum/go-ethereum/bsc/signer/storage"
 )
 
 // Used for testing

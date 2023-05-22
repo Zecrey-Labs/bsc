@@ -5,15 +5,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/forkid"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/eth/protocols/bsc"
-	"github.com/ethereum/go-ethereum/eth/protocols/eth"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
+	"github.com/ethereum/go-ethereum/bsc/common"
+	"github.com/ethereum/go-ethereum/bsc/core"
+	"github.com/ethereum/go-ethereum/bsc/core/forkid"
+	"github.com/ethereum/go-ethereum/bsc/core/types"
+	"github.com/ethereum/go-ethereum/bsc/eth/protocols/bsc"
+	"github.com/ethereum/go-ethereum/bsc/eth/protocols/eth"
+	"github.com/ethereum/go-ethereum/bsc/event"
+	"github.com/ethereum/go-ethereum/bsc/p2p"
+	"github.com/ethereum/go-ethereum/bsc/p2p/enode"
 )
 
 type testBscHandler struct {

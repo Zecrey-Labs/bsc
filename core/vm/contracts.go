@@ -25,14 +25,14 @@ import (
 	"github.com/prysmaticlabs/prysm/v4/crypto/bls"
 	"golang.org/x/crypto/ripemd160"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/crypto/blake2b"
-	"github.com/ethereum/go-ethereum/crypto/bls12381"
-	"github.com/ethereum/go-ethereum/crypto/bn256"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/ethereum/go-ethereum/bsc/common"
+	"github.com/ethereum/go-ethereum/bsc/common/math"
+	"github.com/ethereum/go-ethereum/bsc/crypto"
+	"github.com/ethereum/go-ethereum/bsc/crypto/blake2b"
+	"github.com/ethereum/go-ethereum/bsc/crypto/bls12381"
+	"github.com/ethereum/go-ethereum/bsc/crypto/bn256"
+	"github.com/ethereum/go-ethereum/bsc/log"
+	"github.com/ethereum/go-ethereum/bsc/params"
 )
 
 // PrecompiledContract is the basic interface for native Go contracts. The implementation

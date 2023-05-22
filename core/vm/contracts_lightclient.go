@@ -10,9 +10,9 @@ import (
 	"github.com/tendermint/tendermint/crypto/merkle"
 	cmn "github.com/tendermint/tendermint/libs/common"
 
-	v1 "github.com/ethereum/go-ethereum/core/vm/lightclient/v1"
-	v2 "github.com/ethereum/go-ethereum/core/vm/lightclient/v2"
-	"github.com/ethereum/go-ethereum/params"
+	v1 "github.com/ethereum/go-ethereum/bsc/core/vm/lightclient/v1"
+	v2 "github.com/ethereum/go-ethereum/bsc/core/vm/lightclient/v2"
+	"github.com/ethereum/go-ethereum/bsc/params"
 )
 
 const (

@@ -3,10 +3,10 @@ package eth
 import (
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/eth/protocols/bsc"
-	"github.com/ethereum/go-ethereum/p2p/enode"
+	"github.com/ethereum/go-ethereum/bsc/core"
+	"github.com/ethereum/go-ethereum/bsc/core/types"
+	"github.com/ethereum/go-ethereum/bsc/eth/protocols/bsc"
+	"github.com/ethereum/go-ethereum/bsc/p2p/enode"
 )
 
 // bscHandler implements the bsc.Backend interface to handle the various network

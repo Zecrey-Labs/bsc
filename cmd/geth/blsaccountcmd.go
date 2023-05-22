@@ -25,8 +25,8 @@ import (
 	keystorev4 "github.com/wealdtech/go-eth2-wallet-encryptor-keystorev4"
 	"gopkg.in/urfave/cli.v1"
 
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/signer/core"
+	"github.com/ethereum/go-ethereum/bsc/cmd/utils"
+	"github.com/ethereum/go-ethereum/bsc/signer/core"
 )
 
 const (

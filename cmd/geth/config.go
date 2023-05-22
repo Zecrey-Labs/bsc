@@ -27,17 +27,17 @@ import (
 
 	"gopkg.in/urfave/cli.v1"
 
-	"github.com/ethereum/go-ethereum/accounts/external"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/accounts/scwallet"
-	"github.com/ethereum/go-ethereum/accounts/usbwallet"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/ethereum/go-ethereum/bsc/accounts/external"
+	"github.com/ethereum/go-ethereum/bsc/accounts/keystore"
+	"github.com/ethereum/go-ethereum/bsc/accounts/scwallet"
+	"github.com/ethereum/go-ethereum/bsc/accounts/usbwallet"
+	"github.com/ethereum/go-ethereum/bsc/cmd/utils"
+	"github.com/ethereum/go-ethereum/bsc/eth/ethconfig"
+	"github.com/ethereum/go-ethereum/bsc/internal/ethapi"
+	"github.com/ethereum/go-ethereum/bsc/log"
+	"github.com/ethereum/go-ethereum/bsc/metrics"
+	"github.com/ethereum/go-ethereum/bsc/node"
+	"github.com/ethereum/go-ethereum/bsc/params"
 	"github.com/naoina/toml"
 )
 

@@ -27,13 +27,13 @@ import (
 	"testing/quick"
 	"time"
 
-	"github.com/ethereum/go-ethereum/core/forkid"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/enr"
-	"github.com/ethereum/go-ethereum/p2p/netutil"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/ethereum/go-ethereum/bsc/core/forkid"
+	"github.com/ethereum/go-ethereum/bsc/crypto"
+	"github.com/ethereum/go-ethereum/bsc/p2p/enode"
+	"github.com/ethereum/go-ethereum/bsc/p2p/enr"
+	"github.com/ethereum/go-ethereum/bsc/p2p/netutil"
+	"github.com/ethereum/go-ethereum/bsc/params"
+	"github.com/ethereum/go-ethereum/bsc/rlp"
 )
 
 func TestTable_pingReplace(t *testing.T) {
