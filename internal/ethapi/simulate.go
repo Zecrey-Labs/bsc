@@ -44,6 +44,13 @@ func (s *PublicBlockChainAPI) BlockReceipts(ctx context.Context, blockNrOrHash r
 	if err != nil {
 		return nil, err
 	}
+
+	for _, receipt := range receipts {
+		if receipt.Logs == nil {
+			receipt.Logs = []*types.Log{}
+		}
+	}
+
 	return receipts, nil
 }
 
