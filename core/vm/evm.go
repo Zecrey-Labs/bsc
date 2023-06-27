@@ -17,8 +17,6 @@
 package vm
 
 import (
-	"encoding/hex"
-	"fmt"
 	"math/big"
 	"sync"
 	"sync/atomic"
@@ -195,7 +193,7 @@ func (evm *EVM) Interpreter() *EVMInterpreter {
 // execution error or failed value transfer.
 func (evm *EVM) Call(caller ContractRef, addr common.Address, input []byte, gas uint64, value *big.Int) (ret []byte, leftOverGas uint64, err error) {
 	if evm.IsSimulated {
-		evm.SimulateResp.ErrInfo = evm.SimulateResp.ErrInfo + fmt.Sprintln(" Call: ", addr.String(), gas, value, hex.EncodeToString(input))
+		//evm.SimulateResp.ErrInfo = evm.SimulateResp.ErrInfo + fmt.Sprintln(" Call: ", addr.String(), gas, value, hex.EncodeToString(input))
 		return evm.simulateCall(caller, addr, input, gas, value)
 	}
 	// Fail if we're trying to execute above the call depth limit
