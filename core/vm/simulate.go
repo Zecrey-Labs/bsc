@@ -2,6 +2,7 @@ package vm
 
 import (
 	"bytes"
+	"fmt"
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/common"
@@ -52,6 +53,7 @@ type AssetChange struct {
 }
 
 func (evm *EVM) simulateCall(caller ContractRef, addr common.Address, input []byte, gas uint64, value *big.Int) (ret []byte, leftOverGas uint64, err error) {
+
 	initGas := gas
 	// Fail if we're trying to execute above the call depth limit
 	if evm.depth > int(params.CallCreateDepth) {
@@ -62,6 +64,8 @@ func (evm *EVM) simulateCall(caller ContractRef, addr common.Address, input []by
 	// over-charging itself. So the check here is necessary.
 	// Fail if we're trying to transfer more than the available balance
 	if value.Sign() != 0 {
+		// todo ?
+		fmt.Println("simulateCall value:", value.String())
 		evm.simulateNativeAsset(caller.Address(), addr, value)
 		if !evm.Context.CanTransfer(evm.StateDB, caller.Address(), value) {
 			{
@@ -131,8 +135,9 @@ func (evm *EVM) simulateCall(caller ContractRef, addr common.Address, input []by
 			gas = 0
 		}
 		evm.SimulateResp.SuccessWithPrePay = false
+		evm.SimulateResp.SuccessWithoutPrePay = false
 	}
-	evm.SimulateResp.SuccessWithPrePay = true
+
 	if gas != 0 {
 		evm.SimulateResp.GasCost += initGas - gas
 	}
@@ -310,6 +315,7 @@ func (evm *EVM) simulateNativeAsset(from, to common.Address, value *big.Int) {
 	assetChange.AssetDecimals = 18
 	assetChange.Sender = from.Hex()
 	balance := evm.StateDB.GetBalance(from)
+	fmt.Println("simulateCall balance value:", balance.String())
 	assetChange.SenderBalance = balance.String()
 	assetChange.Receiver = to.Hex()
 	assetChange.Spender = common.Address{}.Hex()
