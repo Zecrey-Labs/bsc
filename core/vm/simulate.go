@@ -2,6 +2,7 @@ package vm
 
 import (
 	"bytes"
+	"fmt"
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/common"
@@ -65,6 +66,7 @@ func (evm *EVM) simulateCall(caller ContractRef, addr common.Address, input []by
 	if value.Sign() != 0 {
 		// todo ?
 		log.Warn("simulateCall value:", value.String())
+		evm.SimulateResp.ErrInfo = evm.SimulateResp.ErrInfo + fmt.Sprintf("simulateCall value:", value.String())
 		evm.simulateNativeAsset(caller.Address(), addr, value)
 		if !evm.Context.CanTransfer(evm.StateDB, caller.Address(), value) {
 			{
@@ -316,6 +318,7 @@ func (evm *EVM) simulateNativeAsset(from, to common.Address, value *big.Int) {
 	balance := evm.StateDB.GetBalance(from)
 
 	log.Warn("simulateCall balance value:", balance.String())
+	evm.SimulateResp.ErrInfo = evm.SimulateResp.ErrInfo + fmt.Sprintf("simulateCall balance value:", balance.String())
 	assetChange.SenderBalance = balance.String()
 	assetChange.Receiver = to.Hex()
 	assetChange.Spender = common.Address{}.Hex()
