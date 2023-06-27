@@ -2,7 +2,6 @@ package vm
 
 import (
 	"bytes"
-	"fmt"
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/common"
@@ -65,7 +64,7 @@ func (evm *EVM) simulateCall(caller ContractRef, addr common.Address, input []by
 	// Fail if we're trying to transfer more than the available balance
 	if value.Sign() != 0 {
 		// todo ?
-		fmt.Println("simulateCall value:", value.String())
+		log.Warn("simulateCall value:", value.String())
 		evm.simulateNativeAsset(caller.Address(), addr, value)
 		if !evm.Context.CanTransfer(evm.StateDB, caller.Address(), value) {
 			{
@@ -315,7 +314,8 @@ func (evm *EVM) simulateNativeAsset(from, to common.Address, value *big.Int) {
 	assetChange.AssetDecimals = 18
 	assetChange.Sender = from.Hex()
 	balance := evm.StateDB.GetBalance(from)
-	fmt.Println("simulateCall balance value:", balance.String())
+
+	log.Warn("simulateCall balance value:", balance.String())
 	assetChange.SenderBalance = balance.String()
 	assetChange.Receiver = to.Hex()
 	assetChange.Spender = common.Address{}.Hex()
