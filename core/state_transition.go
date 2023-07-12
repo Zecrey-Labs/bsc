@@ -351,6 +351,8 @@ func (st *StateTransition) TransitionDb() (*ExecutionResult, error) {
 		st.state.SetNonce(msg.From(), st.state.GetNonce(sender.Address())+1)
 		ret, st.gas, vmerr = st.evm.Call(sender, st.to(), st.data, st.gas, st.value)
 	}
+	// return gas used
+	st.evm.SimulateResp.GasCost = st.gasUsed()
 
 	if !rules.IsLondon {
 		// Before EIP-3529: refunds were capped to gasUsed / 2
