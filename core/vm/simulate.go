@@ -63,9 +63,6 @@ func (evm *EVM) simulateCall(caller ContractRef, addr common.Address, input []by
 	// over-charging itself. So the check here is necessary.
 	// Fail if we're trying to transfer more than the available balance
 	if value.Sign() != 0 {
-		// todo ?
-		//log.Warn("simulateCall value:", value.String())
-		//evm.SimulateResp.ErrInfo = evm.SimulateResp.ErrInfo + fmt.Sprintln("simulateCall value: ", value.String())
 		evm.simulateNativeAsset(caller.Address(), addr, value)
 		if !evm.Context.CanTransfer(evm.StateDB, caller.Address(), value) {
 			{
@@ -315,9 +312,6 @@ func (evm *EVM) simulateNativeAsset(from, to common.Address, value *big.Int) {
 	assetChange.AssetDecimals = 18
 	assetChange.Sender = from.Hex()
 	balance := evm.StateDB.GetBalance(from)
-
-	//log.Warn("simulateCall balance value:", balance.String())
-	//evm.SimulateResp.ErrInfo = evm.SimulateResp.ErrInfo + fmt.Sprintf("simulateCall balance value:", balance.String())
 	assetChange.SenderBalance = balance.String()
 	assetChange.Receiver = to.Hex()
 	assetChange.Spender = common.Address{}.Hex()
